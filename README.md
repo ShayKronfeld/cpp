@@ -1,4 +1,8 @@
 Graph Algorithms Implementation
+
+id: 322234782
+email: kronfeldshay@gmail.com
+
 This project implements various graph algorithms in C++.
 Assumptions
     • The weight of 0 represents the absence of an edge between two vertices (typically represented by infinity in other implementations).
