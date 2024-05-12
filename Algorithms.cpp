@@ -269,6 +269,11 @@ namespace ariel {
     }
     /*
     This function, `isBipartite`, determines whether the given graph is bipartite or not.
+    it performs a depth-first search (DFS) traversal starting from each vertex in the graph.
+    During the traversal, it assigns colors to vertices such that adjacent vertices have different colors.
+    If it encounters a vertex with the same color as its neighbor, it concludes that the graph is not bipartite.
+    If the traversal completes without finding any conflicts in coloring, the function concludes that the graph is bipartite and returns 
+    a string indicating the sets A and B along with their respective vertices
     */
 
     string Algorithms::isBipartite(const Graph& graph) {
