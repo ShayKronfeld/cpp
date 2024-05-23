@@ -29,10 +29,17 @@ namespace ariel {
 
     // If the matrices are not the same size
     for (const auto& row : matrix) { 
-                if (row.size() != matrix.size()) {
-                    throw invalid_argument("Invalid graph: The graph is not a square matrix");
-                }
+        if (row.size() != matrix.size()) {
+            throw invalid_argument("Invalid graph: The graph is not a square matrix");
         }
+    }
+
+    for (int i=0; i<matrix.size(); i++){
+        if (matrix[i][i]!=0){
+            throw invalid_argument("Invalid graph: The diagonal has a value other than 0");
+        }
+    }
+    
     
     adjacencyMatrix = matrix;
     numberOfVertices= matrix.size();
