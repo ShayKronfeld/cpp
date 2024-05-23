@@ -39,9 +39,9 @@ namespace ariel {
     /*
     The first DFS and goes over all the vertices.
     If it did not go through all the vertices, the graph is not necessarily connected. 
-    Then flip the ribs over and run DFS a second time.
+    Then transposes the edges over and run DFS a second time.
     Only if in both passes of the graph it has passed all the vertices, 
-    the graph can be said to be connected.
+    the graph is connected.
     */
     bool Algorithms::isConnected(const Graph& graph) {
         if (graph.getNumberOfVertices() <= 0) {
@@ -165,11 +165,19 @@ namespace ariel {
 
     /*
     This `shortestPath` function finds the shortest path from vertex `u` to vertex `v` 
-    in a given graph using the Bellman-Ford algorithm. 
+    in a given graph using the Bellman-Ford algorithm and go back on the path by the parents. 
     */
     string Algorithms::shortestPath(const Graph& graph, size_t u, size_t v) {
         size_t numVertices = graph.getNumberOfVertices();
+
+        if (numVertices < 0) {
+            throw std::runtime_error("Number of vertices cannot be negative.");
+        }
         
+         if (Algorithms::hasNegativeCycle(graph)) { //if there is a negative cycle
+            return "-1"; 
+        }
+
         // Check if both u and v are within the valid range of vertices
         if (u >= numVertices || v >= numVertices) {
             cout << "Vertex " << (u >= numVertices ? u : v) << " is out of range." << endl;
@@ -346,6 +354,7 @@ namespace ariel {
             return "0";
         }
     }
+
 
 
 }
