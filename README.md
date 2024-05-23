@@ -29,6 +29,15 @@ This is library provides an implementation of a Graph class in C++. The graph is
 
 - isBipartite: This function determines if the graph is bipartite by performing a Depth-First Search (DFS) traversal from each vertex. During the traversal, it assigns colors to vertices such that adjacent vertices have different colors. If a vertex is encountered with the same color as its neighbor, the graph is not bipartite. If the traversal completes without conflicts in coloring, the function concludes the graph is bipartite and returns a string indicating the sets A and B along with their respective vertices.
      
+## Code Structure
+Graph.hpp: Declaration of the Graph class, which represents a graph using an adjacency matrix.
+Graph.cpp: Implementation of the Graph class methods.
+Algorithms.hpp: Declaration of the Algorithms class, which provides various graph algorithms.
+Algorithms.cpp: Implementation of the graph algorithms in the Algorithms class.
 
 ## Testing
 - The project includes a set of test cases (Test.cpp) to verify the correctness of the implemented algorithms. Run the test suite after building the project to ensure that the algorithms function as expected.
+
+## Known Limitations
+- The values in the diagonal must be 0.
+- The graph must have a square matrix
