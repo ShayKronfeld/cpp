@@ -28,10 +28,6 @@ This is library provides an implementation of a Graph class in C++. The graph is
     • Shortest Path Finding: Finds the shortest path between two vertices in a graph.
     • Bipartite Graph Detection: Determines if a given graph is bipartite or not.
     
-How to Build
 
-    • To build the project, use a C++ compiler that supports C++11 or later standards. Compile the source files (Algorithms.cpp, Graph.cpp, Test.cpp) and link them together to create an executable.
-
-Testing
-
-    • The project includes a set of test cases (Test.cpp) to verify the correctness of the implemented algorithms. Run the test suite after building the project to ensure that the algorithms function as expected.
+## Testing
+- The project includes a set of test cases (Test.cpp) to verify the correctness of the implemented algorithms. Run the test suite after building the project to ensure that the algorithms function as expected.
